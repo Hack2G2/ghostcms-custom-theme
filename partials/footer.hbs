@@ -4,9 +4,11 @@ This footer template is shared across all the pages.
 
 <footer class="m-footer">
   <div class="m-footer__content">
-    {{#if @site.secondary_navigation}}
-      <nav class="m-footer__nav-secondary" role="navigation" aria-label="{{t "Secondary menu in footer"}}">
-        {{navigation type="secondary"}}
+    {{#if @site.navigation}}
+      <nav class="m-footer__nav-secondary" role="navigation" aria-label="{{t "Main menu"}}">
+        <ul class="m-secondary-menu">
+          {{navigation}}
+        </ul>
       </nav>
     {{/if}}
     <nav class="m-footer-social">
@@ -24,7 +26,19 @@ This footer template is shared across all the pages.
         <span class="icon-youtube" aria-hidden="true"></span>
       </a>
       <a href="https://videos.hack2g2.fr/" target="_blank" rel="noopener" aria-label="Peertube">
-        <span class="icon-peertube" aria-hidden="true"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="2799 -911 16 22" width="16" height="auto">
+          <defs></defs>
+          <g data-name="Artboard">
+            <g data-name="Symbol">
+              <g data-name="Group">
+                <path fill="#fffff" d="M2799-911v11l8-5" data-name="Path 4"></path>
+                <path fill="#fffff" d="M2799-900v11l8-6" data-name="Path 5"></path>
+                <path fill="#fffff" d="M2807-905v10l8-5" data-name="Path 6"></path>
+                <path fill="transparent" d="M2807-895v-10l-8 5z" data-name="Path 7"></path>
+              </g>
+            </g>
+          </g>
+        </svg>
       </a>
       <a href="https://discord.gg/RSJJqE48Jw" target="_blank" rel="noopener" aria-label="Discord">
         <span class="icon-discord" aria-hidden="true"></span>
