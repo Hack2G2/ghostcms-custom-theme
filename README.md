@@ -6,6 +6,17 @@ If you find this theme useful, please consider to make a donation to support its
 
 <a href="https://ko-fi.com/eddiesigner" target="_blank"><img src="https://res.cloudinary.com/edev/image/upload/v1583011476/button_y8hgt8.png" alt="Donate" style="width: 250px !important; height: 60px !important;" width="250" height="60"></a>
 
+## How to generate liebling.zip file
+
+```bash
+git clone https://github.com/Hack2G2/ghostcms-custom-theme.git
+cd ghostcms-custom-theme/src
+npm install
+npm run production
+```
+
+The **liebling.zip** file will be created at the root folder of the project. You can upload this archive to Ghost in the theme section.
+
 ## Ghost 4
 
 This theme has been optimized for Ghost 4, if you are looking for a Ghost 3 compatible version please refer to [this link](https://github.com/eddiesigner/liebling/releases/tag/v.0.9.4).
