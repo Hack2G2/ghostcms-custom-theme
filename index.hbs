@@ -6,6 +6,7 @@ It can be used also as the home page or the default page.
 {{!-- This block preloads specific assets for the index page --}}
 {{#contentFor "preload"}}
   <link rel="preload" href="{{asset "css/home.css"}}" as="style" />
+  <link rel="preload" href="{{asset "css/post.css"}}" as="style" />
   <link rel="preload" href="{{asset "css/listing.css"}}" as="style" />
   <link rel="preload" href="{{asset "js/home.js"}}" as="script" />
 {{/contentFor}}
@@ -13,6 +14,7 @@ It can be used also as the home page or the default page.
 {{!-- This block loads specific styles for the index page --}}
 {{#contentFor "styles"}}
   <link rel="stylesheet" type="text/css" href="{{asset "css/home.css"}}" media="screen" />
+  <link rel="stylesheet" type="text/css" href="{{asset "css/post.css"}}" media="screen" />
   <link rel="stylesheet" type="text/css" href="{{asset "css/listing.css"}}" media="screen" />
 {{/contentFor}}
 
@@ -36,6 +38,30 @@ into the {body} of the default.hbs template --}}
   </section>
   <div class="l-content">
     <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
+      <!-- Start -->
+      <div class="l-post-content" style="min-height: 0px;">
+        <div class="pos-relative js-post-content">
+          <div style="text-align:center;">
+              <h2>Bienvenue sur le site de <a href="/about">l'association</a> étudiante Hack2G2 !</h2>
+              <p>Vous souhaitez nous rejoindre et participer à la vie de l'association ? Vous pouvez désormais <b>adhérer en ligne</b> !</p>
+              <p>Envie de venir faire une présentation ou un workshop sur un sujet qui vous tient à coeur ? <b>Proposer une intervention</b>.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div style="margin-bottom: 45px;">
+        <iframe width="100%" height="500" src="https://drive.hack2g2.fr/index.php/apps/calendar/embed/2H0SEVYL4SEWNHYC"></iframe>
+        <span style="font-size: small;">
+          <a href="webcal://drive.hack2g2.fr/remote.php/dav/public-calendars/2H0SEVYL4SEWNHYC?export">S'abonner au calendrier</a> - <a href="https://drive.hack2g2.fr/remote.php/dav/public-calendars/2H0SEVYL4SEWNHYC?export">Exporter en .ics</a>
+        </span>
+      </div>
+
+      <div class="l-post-content" style="min-height: 0px;">
+        <div class="pos-relative js-post-content">
+          <h2 style="text-align: center;">Dernières actualités</h2>
+        </div>
+      </div>
+      <!-- End -->
       <div class="l-grid centered">
         {{#get "posts" filter="featured:true" include="authors,tags" limit="5" as |featured|}}
           {{#if featured}}
