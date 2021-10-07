@@ -242,7 +242,7 @@ $(() => {
     }
   })
 
-  $toggleDarkMode.on('change', () => {
+  const updateCurrentTheme = () => {
     if ($toggleDarkMode.is(':checked')) {
       $('html').attr('data-theme', 'dark')
       localStorage.setItem('theme', 'dark')
@@ -250,15 +250,17 @@ $(() => {
       $('html').attr('data-theme', 'light')
       localStorage.setItem('theme', 'light')
     }
-  })
+    // dynamically change the icon 
+    document.getElementsByClassName('m-logo').forEach((link) => {
+      link.getElementsByTagName('img')[0].src = `/assets/images/logo-${localStorage.getItem('theme')}-512px.png`;
+    });
+  };
 
-  $toggleDarkMode.on('mouseenter', () => {
-    toggleDesktopTopbarOverflow(true)
-  })
+  $toggleDarkMode.on('change', () => {
+    updateCurrentTheme();
+  });
 
-  $toggleDarkMode.on('mouseleave', () => {
-    toggleDesktopTopbarOverflow(false)
-  })
+  toggleDesktopTopbarOverflow(true);
 
   $closeNotification.on('click', function () {
     closeNotification($(this).parent())
@@ -290,6 +292,8 @@ $(() => {
       $toggleDarkMode.attr('checked', true)
     }
   }
+
+  updateCurrentTheme();
 
   if ($header.length > 0) {
     const headroom = new Headroom($header[0], {
