@@ -197,7 +197,7 @@ $(() => {
     }
   });
 
-  const updateCurrentTheme = () => {
+  $toggleDarkMode.on('change', () => {
     if ($toggleDarkMode.is(':checked')) {
       $('html').attr('data-theme', 'dark');
       localStorage.setItem('theme', 'dark');
@@ -209,7 +209,7 @@ $(() => {
     if ($nativeComments) {
       $nativeComments.contentDocument.location.reload(true);
     }
-  };
+  });
 
   $toggleDarkMode.on('mouseenter', () => {
     toggleDesktopTopbarOverflow(true);

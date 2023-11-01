@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: $desktop-bar-height;
+    height: 37px;
     overflow-y: hidden;
   }
 
@@ -28,6 +28,8 @@
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
+    padding-top: 40px;
+    padding-bottom: 40px;
     padding-left: 5px;
     margin-bottom: 0;
     -webkit-overflow-scrolling: touch;
