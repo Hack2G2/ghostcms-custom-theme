@@ -242,8 +242,6 @@ $(() => {
     }
   }
 
-  updateCurrentTheme();
-
   if ($header.length > 0) {
     const headroom = new Headroom($header[0], {
       tolerance: {
